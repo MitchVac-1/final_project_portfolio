@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Family Portal</title>
+  <style>
+    :root {
+      --gunmetal: #04232f;
+      --dark-slate-gray: #0b5351;
+      --light-sea-green: #00a9a5;
+      --air-force-blue: #4e8098;
+      --light-sky-blue: #90c2e7;
+      --white: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--gunmetal);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--dark-slate-gray);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: var(--light-sky-blue);
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--white);
+      background-color: var(--light-sea-green);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background-color: var(--air-force-blue);
+      color: var(--light-sky-blue);
+      outline: none;
+    }
+
+    main.content {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: var(--dark-slate-gray);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 3px solid var(--light-sea-green);
+      flex-shrink: 0;
+    }
+
+    .card p {
+      padding: 1rem;
+      margin: 0;
+      color: var(--light-sky-blue);
+      font-size: 1rem;
+      flex-grow: 1;
+    }
+
+    .card a.project-link {
+      color: var(--light-sea-green);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 1rem;
+      display: block;
+      border-top: 1px solid var(--light-sea-green);
+      transition: background-color 0.3s, color 0.3s;
+      user-select: none;
+    }
+
+    .card a.project-link:hover,
+    .card a.project-link:focus {
+      background-color: var(--light-sea-green);
+      color: var(--dark-slate-gray);
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">LOGO OF MY FAMILY</div>
+    <nav>
+      <a href="#fun-facts">Fun Facts</a>
+      <a href="#figureout">About Me</a>
+      <a href="portfolio.html">All Class Info</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <div class="card">
+      <img src="../fun-facts.jpg" alt="Picture of Fun Facts" />
+      <p>Fun facts about my family... We love explosives and fireworks!</p>
+    </div>
+
+    <div class="card">
+      <img src="../me.jpg" alt="Picture of Me" />
+      <p>Hello! I'm the creator of this page, Mitchell Vaclaw! I really enjoy learning new things.</p>
+    </div>
+
+    <div class="card">
+      <img src="../major.jpg" alt="Picture of Major" />
+      <p>My major is... CYBERSECURITY</p>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="apostle_spotlight/thumbnail.jpg" alt="Apostle Spotlight Project" />
+      <a href="apostle_spotlight/apostles.html" target="_blank" class="project-link">Project 1: Apostle Spotlight</a>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="gallery/thumbnail.jpg" alt="Gallery Project" />
+      <a href="gallery/gallery.html" target="_blank" class="project-link">Project 2: Gallery</a>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="grid_flags/thumbnail.jpg" alt="Grid Flags Project" />
+      <a href="grid_flags/flags.html" target="_blank" class="project-link">Project 3: Title Goes Here</a>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="fathersday/thumbnail.jpg" alt="Father's Day Project" />
+      <a href="fathersday/index.html" target="_blank" class="project-link">Project 4: Father's Day</a>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="positioning/thumbnail.jpg" alt="Positioning Project" />
+      <a href="positioning/positioning.html" target="_blank" class="project-link">Project 5: Positioning</a>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="prophet_cards/prophet_cards/thumbnail.jpg" alt="Prophet Cards Project" />
+      <a href="prophet_cards/prophet_cards/nelson.html" target="_blank" class="project-link">Project 6: Prophet Cards</a>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="signup/thumbnail.jpg" alt="Sign Up Bible Study Project" />
+      <a href="signup/signup.html" target="_blank" class="project-link">Project 7: Sign Up Bible Study</a>
+    </div>
+
+    <div class="card" tabindex="0">
+      <img src="client_report_thumbnail.jpg" alt="Client Report" />
+      <a href="client.report.html" target="_blank" class="project-link">CLIENT REPORT</a>
+    </div>
+  </main>
+
+  <footer style="text-align:center; padding:1rem; background-color: var(--dark-slate-gray); color: var(--light-sky-blue);">
+    &copy; 2025 My Family Portal
+  </footer>
+</body>
+</html>

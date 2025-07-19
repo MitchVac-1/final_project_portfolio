@@ -1,0 +1,170 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Feed Sign Up</title>
+
+
+    <style>
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(120, 96, 64);
+    font-family: 'Times New Roman', Times, serif ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+#formContainer {
+    background: white;
+    border: 10px solid navy;
+    border-radius: 30px;
+    width: 375px;
+    overflow: hidden;
+    position: relative;
+}
+
+#formContainer::before {
+    content: "";
+    display: block;
+    background: url(images/jesus_feeds_5000.jpeg) center/cover no-repeat;
+    height: 180px;
+    width: 100%;
+}
+
+
+
+#formContainer h3 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+form {
+    padding: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 12px;
+    column-gap: 10px;
+}
+
+form div {
+    grid-column: span 2; 
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+section {
+    grid-column: span 2;
+    margin-top: 10px;
+}
+
+section label { 
+    text-align: left;
+}
+
+button[type="submit"] {
+    grid-column: span 2;
+    width: 100%;
+    padding: 8px;
+    background-color: lightgray;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+    
+    </style>
+
+</head>
+
+<body>
+    <div id="formContainer">
+        <h3>Sign Up for the Best Scripture Feed EVER</h3>
+        <form id="myForm">
+            <button type="button" id="closeBtn">X</button>
+            <label for="username">Biblical Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>Gender:</label>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+
+            <section>
+                <input type="checkbox" id="newsletter" name="newsletter">
+                <label for="newsletter">Subscribe to newsletter</label>
+            </section>
+
+            <section>
+                <input type="checkbox" id="conditions" name="conditions" required>
+                <label for="conditions">You accept everything here?</label>
+            </section>
+
+            <section>
+                <button type="submit">Submit!!!</button>
+            </section>
+        </form>
+
+
+
+    </div>
+
+    <div id="output"></div>
+
+    <script>
+        // Here is some Javascript to start looking forward to wdd131
+        document.getElementById("closeBtn").addEventListener("click", function () {
+            document.getElementById("formContainer").style.display = "none";
+         });
+        const form = document.getElementById('myForm');
+        const output = document.getElementById('output');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Stop form from actually submitting
+
+            const formData = new FormData(form);
+            const entries = [];
+
+            for (const [key, value] of formData.entries()) {
+                if (key == "password") {
+                    entries.push(`<strong>${key}</strong>: ${value} (Great Password!!!!)`);
+                } else {
+                    entries.push(`<strong>${key}</strong>: ${value}`);
+                }
+            }
+
+            output.innerHTML = `
+            <br>  
+            <h3>Welcome to the best scripture feed ever!!!!!:</h3>
+            <ul>
+                ${entries.map(item => `<li>${item}</li>`).join('')}
+            </ul>
+            `;
+                });
+    </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
